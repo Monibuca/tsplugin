@@ -130,7 +130,7 @@ func (ts *TS) run() {
 					r := bytes.NewBuffer([]byte{})
 					for _, v := range nalus {
 						vl := len(v)
-						if vl == 0 {
+						if vl <= 1 {
 							continue
 						}
 						isFirst := v[1]&0x80 == 0x80 //第一个分片
